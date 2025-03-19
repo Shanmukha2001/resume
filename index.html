@@ -1,1 +1,178 @@
-<h1> My portfolio </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shanmukha Sharma Parri - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .hover-effect:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+        .navbar {
+            background-color: rgba(31, 41, 55, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        .experience-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .experience-table th, .experience-table td {
+            border: 1px solid white;
+            padding: 10px;
+            text-align: left;
+        }
+        .experience-table th {
+            background-color: #1f2937;
+        }
+        .sidebar {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 2000;
+        }
+        .sidebar.active {
+            z-index: 2000;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    
+    <nav class="navbar fixed w-full bg-gray-800 p-4 shadow-lg flex justify-between items-center">
+        <h1 class="text-xl font-bold">Portfolio</h1>
+        <div class="md:hidden">
+            <button id="menu-btn" class="text-white focus:outline-none">☰</button>
+        </div>
+        <div id="menu" class="hidden md:flex space-x-4">
+            <a href="#about" class="mx-2 hover:text-blue-400">About</a>
+            <a href="#skills" class="mx-2 hover:text-blue-400">Skills</a>
+            <a href="#experience" class="mx-2 hover:text-blue-400">Experience</a>
+            <a href="#projects" class="mx-2 hover:text-blue-400">Projects</a>
+            <a href="#contact" class="mx-2 hover:text-blue-400">Contact</a>
+        </div>
+    </nav>
+    <div id="sidebar" class="fixed top-0 left-0 w-2/3 h-full bg-gray-800 p-5 shadow-lg sidebar md:hidden">
+        <button id="close-btn" class="text-white text-2xl">&times;</button>
+        <nav class="mt-5 flex flex-col space-y-4">
+            <a href="#about" class="text-white hover:text-blue-400">About</a>
+            <a href="#skills" class="text-white hover:text-blue-400">Skills</a>
+            <a href="#experience" class="text-white hover:text-blue-400">Experience</a>
+            <a href="#projects" class="text-white hover:text-blue-400">Projects</a>
+            <a href="#contact" class="text-white hover:text-blue-400">Contact</a>
+        </nav>
+    </div>
+    
+    <section id="about" class="min-h-screen flex flex-col items-center justify-center text-center p-6" data-aos="fade-up">
+        <img src="https://shorturl.at/cEFp0" alt="Profile Picture" class="w-32 h-32 rounded-full shadow-lg mb-6 hover-effect">
+        <h2 class="text-4xl font-bold mb-2">Shanmukha Sharma Parri</h2>
+        <p class="text-xl mb-2">M.Tech, IIT Bhubaneswar | Specialization in AI/ML</p>
+        <p class="mb-2">Achievements: Kaggle Bronze Medalist | AWS Certified</p>
+        <p class="font-bold">Contact: +91 6304213910 | sharmashanmukha66@gmail.com</p>
+    </section>
+    
+    <section id="skills" class=" p-10">
+        <h2 class="text-3xl font-bold text-center">Skill Set</h2>
+        <div id="skills-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6 text-center"></div>
+    </section>
+
+    <section id="experience" class=" p-10" >
+        <h2 class="text-3xl font-bold text-center">Experience</h2>
+        <table class="experience-table mt-6">
+            <tr>
+                <th>Company</th>
+                <th>Role</th>
+                <th>Duration</th>
+            </tr>
+            <tr>
+                <td>Ittiam Systems</td>
+                <td>Full time Ai Advanced Video Engineer</td>
+                <td>Jan 2025 - On Going</td>
+            </tr>
+            <tr>
+                <td>TCS</td>
+                <td>Research Intern</td>
+                <td>6 months</td>
+            </tr>
+            <tr>
+                <td>Testsigma</td>
+                <td>Full-time + Intern</td>
+                <td>1.1 years</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="projects" class=" p-10" data-aos="fade-up">
+        <h2 class="text-3xl font-bold text-center">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            <div class="bg-gray-800 rounded-lg shadow-lg p-4 hover-effect" data-aos="fade-up">
+                <img src="https://shorturl.at/qTspt" alt="Project 1" class="w-full h-40 object-cover rounded-lg hover-effect">
+                <h3 class="text-xl font-bold mt-4">WebRTC Video Conferencing App</h3>
+                <p class="mt-2">A real-time video chat application using WebRTC and Node.js.</p>
+            </div>
+            <div class="bg-gray-800 rounded-lg shadow-lg p-4 hover-effect" data-aos="fade-up">
+                <img src="https://shorturl.at/LeiK4" alt="Project 2" class="w-full h-40 object-cover rounded-lg hover-effect">
+                <h3 class="text-xl font-bold mt-4">Exam Portal (MERN Stack)</h3>
+                <p class="mt-2">An online examination system built with the MERN stack.</p>
+            </div>
+            <div class="bg-gray-800 rounded-lg shadow-lg p-4 hover-effect" data-aos="fade-up">
+                <img src="https://shorturl.at/YLJUa" alt="Project 3" class="w-full h-40 object-cover rounded-lg hover-effect">
+                <h3 class="text-xl font-bold mt-4">NLP Low Latency Explainable Ai</h3>
+                <p class="mt-2">A machine learning project for extracting key data from images.</p>
+            </div>
+            <div class="bg-gray-800 rounded-lg shadow-lg p-4 hover-effect" data-aos="fade-up">
+                <img src="https://shorturl.at/VSP7a" alt="Project 3" class="w-full h-40 object-cover rounded-lg hover-effect">
+                <h3 class="text-xl font-bold mt-4">RSNA 2023 Abdominal Trauma Detection</h3>
+                <p class="mt-2">Deep learning project focused on medical image segmentation and classification.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="px-4 py-10 text-center" data-aos="fade-up">
+        <h2 class="sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-white">Contact Me</h2>
+        <p class="mt-4 text-base sm:text-lg font-semibold text-gray-300 max-w-md mx-auto">
+            Feel free to reach out for collaborations or project discussions.
+        </p>
+        <div class="flex flex-col items-center justify-center gap-2 mt-4">
+            <p class="text-lg sm:text-xl font-bold text-gray-200">
+                Email: <span class="text-yellow-400 break-words">sharmashanmukha66@gmail.com</span>
+            </p>
+            <p class="text-lg sm:text-xl font-bold text-gray-200">
+                Phone: <span class="text-yellow-400">+91 6304213910</span>
+            </p>
+        </div>
+    </section>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+        
+        const skills = ["Python", "JavaScript", "C++", "TensorFlow", "OpenCV", "Docker", "AWS", "GCP", "PyTorch", "Keras", "FastAPI", "React", "MongoDB", "SQL", "Machine Learning", "Deep Learning", "Computer Vision"];
+        skills.sort();
+        const skillsContainer = document.getElementById("skills-container");
+        
+        skills.forEach((skill, index) => {
+            const skillDiv = document.createElement("div");
+            skillDiv.className = "p-4 bg-gray-800 rounded-lg shadow-lg hover-effect";
+            if (window.innerWidth >= 768) { // Apply animation only on medium (md) screens and larger
+                skillDiv.setAttribute("data-aos", "fade-right");
+                skillDiv.setAttribute("data-aos-delay", index * 100);
+            }
+            skillDiv.textContent = skill;
+            skillsContainer.appendChild(skillDiv);
+        });
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.add('active');
+        });
+        document.getElementById('close-btn').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.remove('active');
+        });
+    </script>
+</body>
+</html>
